@@ -3,23 +3,27 @@ package dio.oo.bootcamp.domain;
 import lombok.Getter;
 import lombok.experimental.SuperBuilder;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 @Getter
 @SuperBuilder
-public class Course extends Content {
+public class Mentorship extends Content {
 
-    private int workload;
+    private LocalDateTime dateTime;
 
     @Override
     public double calcuteXP() {
-        return DEFAULT_XP_VALUE * workload;
+        return DEFAULT_XP_VALUE + 20;
     }
 
     @Override
     public String toString() {
-        return "Curso" + "\n" +
+        return "Mentoria" + "\n" +
                 "\tTítulo: " + getTitle() + "\n" +
                 "\tDescrição: " + getDescription() + "\n" +
-                "\tCarga horária: " + workload + "\n" +
+                "\tData: " + dateTime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")) + "\n" +
                 "\tExperiência: " + calcuteXP();
     }
+
 }

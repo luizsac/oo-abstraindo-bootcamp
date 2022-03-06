@@ -2,9 +2,10 @@ package dio.oo.bootcamp.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
-@AllArgsConstructor
 @Getter
+@SuperBuilder
 public abstract class Content {
 
     protected static final double DEFAULT_XP_VALUE = 10d;

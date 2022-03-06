@@ -1,8 +1,11 @@
 package dio.oo.bootcamp;
 
 import dio.oo.bootcamp.domain.Course;
+import dio.oo.bootcamp.domain.Mentorship;
 
-public abstract class Main {
+import java.time.LocalDateTime;
+
+public class Main {
 
     public static void main(String[] args) {
 
@@ -19,6 +22,14 @@ public abstract class Main {
                         "conheça quais são as novidades nas versões da tecnologia: Java 10 e Java 11.")
                 .workload(8)
                 .build();
+
+        Mentorship mentorship = Mentorship.builder()
+                .title("Start coding - Java Essentials 1")
+                .description("Aprenda com a Dri os conceitos básicos da linguagem Java nessa mentoria exclusiva.")
+                .dateTime(LocalDateTime.of(2021, 12, 2, 16, 0))
+                .build();
+
+        System.out.println(mentorship);
 
     }
 
