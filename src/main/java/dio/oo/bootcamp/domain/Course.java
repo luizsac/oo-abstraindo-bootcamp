@@ -5,7 +5,7 @@ import lombok.experimental.SuperBuilder;
 
 @Getter
 @SuperBuilder
-public class Course extends Content {
+public class Course extends BootcampContent {
 
     private int workload;
 

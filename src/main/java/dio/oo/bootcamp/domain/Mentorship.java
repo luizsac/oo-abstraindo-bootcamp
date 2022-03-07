@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 @Getter
 @SuperBuilder
-public class Mentorship extends Content {
+public class Mentorship extends BootcampContent {
 
     private LocalDateTime dateTime;
 
