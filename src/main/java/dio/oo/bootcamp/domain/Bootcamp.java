@@ -14,8 +14,8 @@ public class Bootcamp extends Content {
     private LocalDate startDate;
     private LocalDate deadlineToFinish;
     private int daysToComplete;
-    private Set<Dev> enrolledDevs;
     private Set<BootcampContent> content;
+    private Set<Dev> enrolledDevs;
 
     @Builder
     public Bootcamp(String title, String description, LocalDate startDate, int daysToComplete) {
@@ -23,16 +23,20 @@ public class Bootcamp extends Content {
         this.startDate = startDate;
         this.daysToComplete = daysToComplete;
         this.deadlineToFinish = startDate.plusDays(daysToComplete);
-        this.enrolledDevs = new HashSet<>();
         this.content = new LinkedHashSet<>();
+        this.enrolledDevs = new HashSet<>();
     }
 
-    public boolean enrollDev(Dev dev) {
-        return enrolledDevs.add(dev);
+    public void addContent(BootcampContent content) {
+        this.content.add(content);
     }
 
-    public boolean cancelEnrollment(Dev dev) {
-        return enrolledDevs.remove(dev);
+    public void enrollDev(Dev dev) {
+        enrolledDevs.add(dev);
+    }
+
+    public void cancelEnrollment(Dev dev) {
+        enrolledDevs.remove(dev);
     }
 
     @Override

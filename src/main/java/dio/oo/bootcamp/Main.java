@@ -1,8 +1,11 @@
 package dio.oo.bootcamp;
 
+import dio.oo.bootcamp.domain.Bootcamp;
 import dio.oo.bootcamp.domain.Course;
+import dio.oo.bootcamp.domain.Dev;
 import dio.oo.bootcamp.domain.Mentorship;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Main {
@@ -29,7 +32,38 @@ public class Main {
                 .dateTime(LocalDateTime.of(2021, 12, 2, 16, 0))
                 .build();
 
-        System.out.println(mentorship);
+        Bootcamp bootcamp = Bootcamp.builder()
+                .title("Spread Java Developer")
+                .description("Com o Bootcamp Spread Java Developer, você aprenderá sobre os principais fundamentos de" +
+                        " Java e se especializará dentro desta área.")
+                .startDate(LocalDate.of(2021, 11, 10))
+                .daysToComplete(60)
+                .build();
+
+        bootcamp.addContent(course1);
+        bootcamp.addContent(course2);
+        bootcamp.addContent(mentorship);
+
+        Dev dev = Dev.builder()
+                .name("Foo")
+                .build();
+
+        dev.enrollInBootcamp(bootcamp);
+
+        System.out.println(dev.getName() + " está matriculado nos conteúdos:\n" + dev.getBootcampContent());
+        System.out.println(dev.getName() + " possui " + dev.calculateTotalXP() + " pontos de experiência");
+
+        dev.advance();
+        dev.advance();
+        dev.advance();
+
+        System.out.println(dev.getName() + " possui " + dev.calculateTotalXP() + " pontos de experiência");
+
+        dev.advance();
+
+        dev.cancelEnrollment(bootcamp);
+
+        dev.advance();
 
     }
 
