@@ -40,9 +40,9 @@ public class Dev {
             this.completedContent.add(opBootcampContent.get());
             this.bootcampContent.remove(opBootcampContent.get());
         } else if (!this.completedContent.isEmpty()) {
-            System.out.println(this.name + " completou todo o conteúdo do bootcamp");
+            System.out.println(this.name + " completou todo o conteudo do bootcamp");
         } else {
-            System.out.println(this.name + " não está matriculado em um bootcamp");
+            System.out.println(this.name + " nao esta matriculado em um bootcamp");
         }
     }
 
